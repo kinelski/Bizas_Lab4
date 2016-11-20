@@ -1,5 +1,4 @@
 package imposto;
 
-public class IData {
-
+public interface IData {
 }

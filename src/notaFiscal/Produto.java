@@ -8,5 +8,5 @@ public class Produto extends ProdutoServico{
 		this.categoriaTributaria = categoriaTributaria;
 		this.infoProdServ = infoProduto;
 	}
-	
+
 }

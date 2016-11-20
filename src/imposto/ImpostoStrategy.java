@@ -1,8 +1,5 @@
 package imposto;
-import java.util.ArrayList;
-
-import notaFiscal.*;
 
 public interface ImpostoStrategy {
-	public float calcularImposto(ArrayList<ItemDeVenda> itens);
+	public double calcularImposto(double custo, int quant, double aliquota);
 }

@@ -1,10 +1,23 @@
 package imposto;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+
+import notaFiscal.ItemDeVenda;
 
 public abstract class Imposto {
 	
-	private double aliquota;
-	private ArrayList<ImpostoStrategy> listaImpostoStrategy = new ArrayList<ImpostoStrategy>();
-	private IData data;
+	protected ImpostoStrategy strategy_;
+	protected IData data_;
+	
+	protected double aliquotaDefault_;
+	protected HashMap<String, Double> aliquotaPorCategoria_;
+	
+	protected String name_;
+	
+	public abstract double calcularImposto (ArrayList<ItemDeVenda> itens);
+	
+	public String getName(){
+		return name_;
+	}
 }
