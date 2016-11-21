@@ -11,11 +11,14 @@ public class ItemDeVenda {
 	private int quantidade;
 	private double desconto;
 	
-	public ItemDeVenda(NotaFiscal nota, ProdutoServico prodServ, int quantidade, double desconto){
+	public ItemDeVenda(NotaFiscal nota, ProdutoServico prodServ, int quantidade, double desconto) throws Exception{
 		this.nota = nota;
 		this.mercadoria = prodServ;
 		this.quantidade = quantidade;
 		this.desconto = desconto;
+		
+		if (nota == null || prodServ == null || quantidade == 0)
+			throw new Exception();
 	}
 	
 	public ProdutoServico getMercadoria(){

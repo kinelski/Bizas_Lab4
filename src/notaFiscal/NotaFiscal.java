@@ -34,7 +34,7 @@ public class NotaFiscal {
 		precoImpostos = 0;
 	}
 	
-	public void addItem (String nome, int quant){
+	public void addItem (String nome, int quant) throws Exception{
 		if (!estado.equals("em elaboracao"))
 			return;
 		
@@ -59,7 +59,7 @@ public class NotaFiscal {
 		}
 	}
 	
-	public void removeItem (String nome, int quant){
+	public void removeItem (String nome, int quant) throws Exception{
 		if (!estado.equals("em elaboracao"))
 			return;
 		
@@ -98,7 +98,7 @@ public class NotaFiscal {
 		}
 	}
 	
-	public void changeItem (String nome, int quant){
+	public void changeItem (String nome, int quant) throws Exception{
 		removeItem(nome);
 		addItem(nome, quant);
 	}

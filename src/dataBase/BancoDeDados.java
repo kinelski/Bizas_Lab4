@@ -23,4 +23,16 @@ public class BancoDeDados {
 		return instanceOfDB_NF.validaNF(nota);
 	}
 	
+	public void createProduto (String nome, double precoUnitario, String categoriaTributaria, String infoProduto){
+		instanceOfDB_PS.createProduto (nome, precoUnitario, categoriaTributaria, infoProduto);
+	}
+	
+	public void createServico (String nome, double precoUnitario, String categoriaTributaria, String infoServico){
+		instanceOfDB_PS.createServico (nome, precoUnitario, categoriaTributaria, infoServico);
+	}
+	
+	public void addChild (String parent, String child){
+		instanceOfDB_PS.addChild(parent, child);
+	}
+	
 }
