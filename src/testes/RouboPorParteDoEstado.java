@@ -9,13 +9,19 @@ import imposto.Imposto;
 import notaFiscal.ItemDeVenda;
 
 public class RouboPorParteDoEstado extends Imposto{
+	
+	private RouboData data_;
 
 	public RouboPorParteDoEstado(){
 		name_ = "Roubo por parte do estado";
 		strategy_ = new RouboStrategy();
-		aliquotaDefault_ = 0.3;
 		aliquotaPorCategoria_ = new HashMap<String, Double>();
-		data_ = new rouboData();
+		data_ = RouboData.getInstance();
+		
+		if (data_.exceedsLimit())
+			aliquotaDefault_ = 0.2;
+		else
+			aliquotaDefault_ = 0.3;
 	}
 	
 	public double applyStrategy (ProdutoServico ps, int quant){
@@ -42,6 +48,8 @@ public class RouboPorParteDoEstado extends Imposto{
 		
 		for (ItemDeVenda item : itens)
 			valor += applyStrategy(item.getMercadoria(), item.quant());
+		
+		data_.addCusto(valor);
 		
 		return valor;
 	}

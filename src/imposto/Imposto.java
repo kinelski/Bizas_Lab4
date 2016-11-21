@@ -8,7 +8,6 @@ import notaFiscal.ItemDeVenda;
 public abstract class Imposto {
 	
 	protected ImpostoStrategy strategy_;
-	protected IData data_;
 	
 	protected double aliquotaDefault_;
 	protected HashMap<String, Double> aliquotaPorCategoria_;
