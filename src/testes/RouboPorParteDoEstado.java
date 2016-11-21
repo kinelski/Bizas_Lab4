@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import dataBase.ProdutoServico;
 import imposto.Imposto;
 import notaFiscal.ItemDeVenda;
-import notaFiscal.ProdutoServico;
 
 public class RouboPorParteDoEstado extends Imposto{
 
@@ -15,6 +15,7 @@ public class RouboPorParteDoEstado extends Imposto{
 		strategy_ = new RouboStrategy();
 		aliquotaDefault_ = 0.3;
 		aliquotaPorCategoria_ = new HashMap<String, Double>();
+		data_ = new rouboData();
 	}
 	
 	public double applyStrategy (ProdutoServico ps, int quant){

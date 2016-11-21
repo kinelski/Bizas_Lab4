@@ -24,6 +24,10 @@ class DB_NF {
 	}
 	
 	public boolean validaNF (NotaFiscal nota){
+		if (nota.numOfItems() == 0)
+			return false;
+		if (nota.validada())
+			return false;
 		if (!nota.validavel())
 			return false;
 		

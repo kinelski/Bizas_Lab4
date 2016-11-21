@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Map;
 
 import dataBase.BancoDeDados;
+import dataBase.ProdutoServico;
 import imposto.Imposto;
 
 public class NotaFiscal {
@@ -31,24 +32,6 @@ public class NotaFiscal {
 		
 		precoItens = 0;
 		precoImpostos = 0;
-		
-		ProdutoServico banana = new Produto("Banana", 0.48, "Delicia", "Macaco Quer Banana");
-		ItemDeVenda iv = new ItemDeVenda(this, banana, 2, 0);
-		ProdutoServico casca = new Produto("Casca", 0.20, "Lixo", "Nem Macaco Quer");
-		banana.addComponent(casca);
-		ProdutoServico inseto = new Produto("Inseto", 0.14, "Proteina", "Alguns Macacos Querem");
-		banana.addComponent(inseto);
-		ProdutoServico insetoDeCasca = new Produto("Inseto de casca", 0.5, "Proteina", "Alguns Macacos Querem");
-		casca.addComponent(insetoDeCasca);
-		
-		ItemDeVenda iv2 = new ItemDeVenda(this, casca, 3, 0);
-		
-		itensDeVenda.add(iv);
-		precoItens += iv.custoTotal();
-		itensDeVenda.add(iv);
-		precoItens += iv.custoTotal();
-		itensDeVenda.add(iv2);
-		precoItens += iv2.custoTotal();
 	}
 	
 	public void addItem (String nome, int quant){
@@ -142,6 +125,10 @@ public class NotaFiscal {
 		return false;
 	}
 	
+	public int getID(){
+		return id;
+	}
+	
 	public boolean validavel(){
 		if (numOfItems() == 0)
 			return false;
@@ -149,10 +136,6 @@ public class NotaFiscal {
 			return false;
 		
 		return true;
-	}
-	
-	public int getID(){
-		return id;
 	}
 	
 	public void aplicaImpostos (List<Imposto> impostos){

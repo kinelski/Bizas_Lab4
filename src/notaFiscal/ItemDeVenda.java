@@ -2,6 +2,8 @@ package notaFiscal;
 
 import java.text.DecimalFormat;
 
+import dataBase.ProdutoServico;
+
 public class ItemDeVenda {
 	
 	private NotaFiscal nota;

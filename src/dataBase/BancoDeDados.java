@@ -1,7 +1,6 @@
 package dataBase;
 
 import notaFiscal.NotaFiscal;
-import notaFiscal.ProdutoServico;
 
 public class BancoDeDados {
 	
@@ -17,7 +16,7 @@ public class BancoDeDados {
 	}
 	
 	public ProdutoServico getProdutoServico (String nome){
-		return null;
+		return instanceOfDB_PS.validaPS(nome);
 	}
 	
 	public boolean validaNF (NotaFiscal nota){

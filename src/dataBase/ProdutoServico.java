@@ -1,4 +1,4 @@
-package notaFiscal;
+package dataBase;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -12,11 +12,11 @@ public abstract class ProdutoServico {
 	protected String infoProdServ;
 	protected String categoriaTributaria;
 	
-	public void addComponent(ProdutoServico prodServ){
+	void addComponent(ProdutoServico prodServ){
 		listaProdServ.add(prodServ);
 	}
 	
-	public void removeComponent(ProdutoServico prodServ){
+	void removeComponent(ProdutoServico prodServ){
 		listaProdServ.remove(prodServ);
 	}
 	
